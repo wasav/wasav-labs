@@ -1,0 +1,18 @@
+.timeline-demo{
+	width:80%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.chart-area{
+	height:400px;
+}
+
+.timeline-demo .window-summary{
+	text-align:center;
+}
+
+.timeline-demo .window-summary > span:first-child,
+.timeline-demo .window-summary > span:nth-child(3){
+	font-weight:bold;
+}

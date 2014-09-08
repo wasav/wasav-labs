@@ -1,0 +1,107 @@
+.timeline{
+	height:50px;
+}
+
+.timeline > div{
+	height:100%;
+	overflow:hidden;
+	
+	-webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select:none;
+    user-select: none;
+}
+
+.timeline .main-zone{
+    
+    position: absolute;
+    z-index: 0;
+    cursor:pointer;
+
+
+    /* Fixed by Window positioners size (base-64 images)
+        thus independant from font size    
+    */
+    bottom: 7px;
+    top: 7px;
+
+    /* 
+        Defined by arrows size
+        Here an arrow is 30px wide, add
+        10px to separate the main zone
+        from the arrows
+    */
+    left: 45px;
+    right: 45px;
+}
+
+.timeline .window .positioner{
+    position:absolute;
+    
+    /* Defined by base 64 images thus independent from font size */
+    top:-5px;
+    height:11px;
+    width:10px;
+}
+
+.timeline .window{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    z-index: 10;
+
+    opacity:0.4;
+
+    cursor:pointer;
+}
+
+.timeline .window.dragging{
+    opacity:0.2;
+}
+
+.timeline .window.dragging-clone{
+    opacity:0.4;
+}
+
+.timeline .arrow{
+    position: absolute;
+    cursor:pointer;
+    
+    /* Defined by the base 64-image */
+    width:30px;
+    height:32px;
+}
+
+.timeline .tick{
+    position:absolute;
+    z-index:2;
+    top:0;
+    bottom:0;
+    width:1px;
+    
+}
+
+.timeline .tick-label{
+    position:absolute;
+    z-index:3;
+    font-size: 0.9em;
+    cursor:pointer;
+    white-space:nowrap;
+}
+
+.timeline .tooltip-window{
+    position:absolute;
+    top: 10px;
+	z-index: 10;
+	height: 20px;
+	border-radius: 5px;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+
+.timeline .tooltip-window span{
+    /* Ensuring the tooltip is always on one line */
+    white-space:nowrap;
+    font-size:0.9em;
+}
