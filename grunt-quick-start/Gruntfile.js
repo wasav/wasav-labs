@@ -2,7 +2,9 @@
 module.exports = function(grunt) {
 
   grunt.initConfig({
+	// Copy task
 	copy:{
+		// copy in the bin folder
 		'debug-bin':{
 			files:{
 				'bin/<%= specific_config.debug_name %>/': ['src/**/*.js', 
@@ -10,12 +12,14 @@ module.exports = function(grunt) {
 														   'index.html']
 			}
 		},
+		// copy in the server folder (under a debug name)
 		debug:{
 			expand: true,
 			cwd: 'bin/',
 			src: '<%= specific_config.debug_name %>/**',
 			dest: '<%= specific_config.apache_dest %>'
 		},
+		// same under a release name
 		release:{
 			expand: true,
 			cwd: 'bin/',
@@ -25,6 +29,7 @@ module.exports = function(grunt) {
 	},
 	uglify:{
 		options:{
+			// do not modify variable names
 			mangle: false
 		},
 		release:{
@@ -45,7 +50,9 @@ module.exports = function(grunt) {
 	jade:{
 		debug:{
 			options:{
+				// Do not minify HTML output
 				pretty: true,
+				// Defining the variables used in the template
 				data: {
 					js: '<%= specific_config.js_files_in_order %>',
 					css: '<%= specific_config.css_files_in_order %>'
@@ -78,10 +85,12 @@ module.exports = function(grunt) {
 		css_files_in_order: grunt.file
 								 .expand(['css/**/*.css']),
 		
+		// Apache folder
 		apache_dest: 'D:/Programs/Bitnami/wampstack-5.4.33-0/apache2/htdocs/',
 		
 		debug_name: 'grunt-website-debug',
 		release_name: 'grunt-website-release',
+		// Package.json file, for version
 		pkg: grunt.file.readJSON('package.json')
 	}
 	
@@ -93,7 +102,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-jade');
   
-  // declaring the default action
+  // declaring actions
   grunt.registerTask('default', ['jade:debug', 'copy:debug-bin','copy:debug']);
   grunt.registerTask('debug', ['jade:debug', 'copy:debug-bin','copy:debug']);
   grunt.registerTask('release', ['uglify:release', 'cssmin:release', 'jade:release', 'copy:release']);
