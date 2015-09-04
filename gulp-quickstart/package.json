@@ -1,0 +1,24 @@
+{
+  "name": "gulp-quickstart",
+  "version": "1.0.0",
+  "description": "Gulp QuickStart Project",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "homepage": "https://github.com/wasav/wasav-labs/tree/master/gulp-quickstart",
+  "author": "Chris Mitel",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-bump": "^0.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-csslint": "^0.2.0",
+    "gulp-inject": "^1.5.0",
+    "gulp-jslint": "^0.2.2",
+    "gulp-load-plugins": "^1.0.0-rc.1",
+    "gulp-server-livereload": "^1.4.0",
+    "gulp-uglify": "^1.4.0",
+    "gulp-uglifycss": "^1.0.4"
+  }
+}
