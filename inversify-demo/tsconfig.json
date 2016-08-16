@@ -1,0 +1,14 @@
+﻿{
+  "compilerOptions": {
+    "module": "system",
+    "target": "ES5",
+	"outDir": "./dist",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "exclude": [
+    "node_modules",
+	"dist"
+  ]
+}
