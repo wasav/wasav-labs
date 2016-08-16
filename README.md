@@ -1,5 +1,12 @@
-wasav-labs
-==========
+Inversify Demo
+==============
 
+Demo for the article about dependency injection in javascript.
 
-Repository for storing labs seen at http://wasav.fr/index.php?page=labs
+After having downloaded the files:
+
+1. run "npm install" in the root
+2. run "jspm install" in the dist folder
+3. run "tsc" to compile
+3. Starts your favorite server in dist (in node for instance, its http-server)
+
